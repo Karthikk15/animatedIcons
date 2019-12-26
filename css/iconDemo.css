@@ -14,27 +14,22 @@ button:hover{
     transform: scale(1.03);
 }
 
-h1 {
-	font-family: 'Baskervville', serif;
-	font-size: 3em;
-	border-bottom: 2px solid pink;
-	border-right: 2px solid pink;
-    width: 600px;
+h1{
 	text-align: center;
-	-moz-box-shadow:4px 4px 5px #888888;
-	-ms-box-shadow: 4px 4px 5px #888888;
-	-webkit-box-shadow: 4px 4px 5px #888888;
-	-o-box-shadow: 4px 4px 5px #888888;
-	box-shadow: 4px 4px 5px 5px #888888;
-	margin-top: 30px;
-	margin-left: 350px;
-	
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	text-transform: uppercase;	
+	color: white;	
+	margin-top: 0px;	
 }
-.header{
-    display: flex;
+h1::first-letter {
+	font-size: 50px;
+	color:black;
 }
 
 img{
     width: 200px;
     height: 200px;
+}
+body{
+	margin: 0px;	
 }

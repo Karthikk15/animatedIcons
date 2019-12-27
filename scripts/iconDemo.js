@@ -1210,7 +1210,7 @@ CameraBtn.addEventListener('click', function () {
                     easing: 'sin.out'
                 }),
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
                         CameraSpan.classList.add('tada');
                     }
@@ -1727,7 +1727,7 @@ calculatorIconBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
                         calculatorIconSpan.classList.add('bounceIn');
                     }

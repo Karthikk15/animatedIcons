@@ -3595,6 +3595,8 @@
 }
 
 .slideOutUp {
+  -webkit-animation-duration: .753s;
+  animation-duration: .753s;
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }

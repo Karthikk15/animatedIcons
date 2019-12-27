@@ -49,3 +49,20 @@
 .icobutton--unicorn svg {
 	fill: #c0c1c3;
 }
+
+.svg-icon {
+	width: 1em;
+	height: 1em;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+	fill: #111111;
+  }
+  
+  .svg-icon circle {
+	stroke: #0f0f0f;
+	stroke-width: 1;
+  }
+

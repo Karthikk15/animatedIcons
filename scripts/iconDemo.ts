@@ -94,7 +94,7 @@ likeBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
                         iconSpan.classList.add('jello');
                     }
@@ -135,7 +135,7 @@ hearButn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
                         spanHeart.classList.add('heartBeat');//  el1span.style.WebkitTransform = el1span.style.transform = 'scale3d(0,0,1)';
                     }
@@ -181,7 +181,7 @@ voteButn.addEventListener('click', function () {
                     strokeWidth: { 20: 0 },
                     opacity: 0.6,
                     duration: 700,
-                    easing: mojs.easing.sin.out
+                    easing: mojs.easing.sin.in
                 })
             ]
         }
@@ -318,7 +318,7 @@ dislikeBtn.addEventListener('click', function () {
                 // }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
                         disLikeSpan.classList.add('fadeInUp');
                     }
@@ -365,7 +365,7 @@ bellBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
                         bellSpan.classList.add('swing');
                     }
@@ -410,7 +410,7 @@ checkBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
                         checkSpan.classList.add('pulse');
                     }
@@ -453,7 +453,7 @@ shwerBtn.addEventListener('click', function () {
                         easing: 'quad.out',
                         isShowEnd: false
                     }
-                })
+                }),
             ]
         };
     }
@@ -488,7 +488,7 @@ printBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                new mojs.Tween({
-                   duration: 1200,
+                   duration: 500,
                    onUpdate: function (progress) {
                     printSpan.classList.add('shake');
                    }
@@ -523,7 +523,8 @@ mphoneBtn.addEventListener('click', function () {
 					opacity: 		0.4,
 					duration: 	1000,
 					delay: 			100,
-					easing: 		mojs.easing.bezier(0, 1, 0.5, 1)
+                    easing: 		mojs.easing.bezier(0, 1, 0.5, 1),
+                    isShowEnd: false
 				}),
 				// ring animation
 				new mojs.Shape({
@@ -535,9 +536,9 @@ mphoneBtn.addEventListener('click', function () {
 					opacity: 	0.2,
 					duration: 1800,
 					delay: 		300,
-					easing: 	mojs.easing.bezier(0, 1, 0.5, 1)
-				})
-
+                    easing: 	mojs.easing.bezier(0, 1, 0.5, 1),
+                    isShowEnd: false
+				}),
             ]
         };
     }
@@ -579,7 +580,7 @@ let shapeInSwril = {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
                         fireSpan.classList.add('jello');
                     }
@@ -598,7 +599,7 @@ let youTubeOption: any;
 let youTubeSpan: any;
 
 youTubeBtn.addEventListener('click', function () {
-    this.style.color = 'blue';
+    this.style.color = 'red';
     if (typeof youTubeLike == "undefined") {
         youTubeLike = new AnimateIcon();
         youTubeSpan = this.firstElementChild;
@@ -610,7 +611,7 @@ youTubeBtn.addEventListener('click', function () {
                     radius: { 0: 60 },
                     count: 6,
                     children: {
-                        shape: 'polygon',
+                        shape: 'rect',
                         stroke: '#C0C1C3',
                         opacity: 0.6,
                         radius: 15,
@@ -618,42 +619,17 @@ youTubeBtn.addEventListener('click', function () {
                         easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
                     }
                 }),
-
-                new mojs.Shape({
-                    parent: this,
-                    shape: 'circle',
-                    radius: { 0: 60 },
-                    fill: 'transparent',
-                    stroke: '#14D514',
-                    strokeWidth: { 20: 0 },
-                    opacity: 0.6,
-                    duration: 700,
-                    delay:300,
-                    easing: mojs.easing.sin.out
-                }),
-                new mojs.Shape({
-                    parent: this,
-                    shape: 'circle',
-                    radius: { 0: 60 },
-                    fill: 'transparent',
-                    stroke: '#26B026',
-                    strokeWidth: { 20: 0 },
-                    opacity: 0.6,
-                    duration: 700,
-                    delay:500,
-                    easing: mojs.easing.sin.out
-                }),
                 // icon scale animation
                 new mojs.Tween({
                     duration: 500,
                     onUpdate: function (progress) {
-                        youTubeSpan.classList.add('jello');
+                        youTubeSpan.classList.add('bounceIn');
                     }
                 })
             ]
         };
     } else {
-        youTubeSpan.classList.remove('jello');
+        youTubeSpan.classList.remove('bounceIn');
     }
     youTubeLike.animateElement(this, youTubeOption, this.style.color, false);
 });
@@ -664,7 +640,7 @@ let dropboxOption: any;
 let dropboxSpan: any;
 
 dropboxBtn.addEventListener('click', function () {
-    this.style.color = 'Red';
+    this.style.color = 'blue';
     if (typeof dropbox == "undefined") {
         dropbox = new AnimateIcon();
         dropboxSpan = this.firstElementChild;
@@ -701,13 +677,13 @@ dropboxBtn.addEventListener('click', function () {
                 new mojs.Tween({
                     duration: 500,
                     onUpdate: function (progress) {
-                        dropboxSpan.classList.add('jello');
+                        dropboxSpan.classList.add('flash');
                     }
                 })
             ]
         };
     } else {
-        dropboxSpan.classList.remove('jello');
+        dropboxSpan.classList.remove('flash');
     }
     dropbox.animateElement(this, dropboxOption, this.style.color, false);
 });
@@ -718,7 +694,7 @@ let femaleIconOption: any;
 let femaleIconSpan: any;
 
 femaleIconBtn.addEventListener('click', function () {
-    this.style.color = 'blue';
+    this.style.color = '#FE642E';
     if (typeof femaleIcon == "undefined") {
         femaleIcon = new AnimateIcon();
         femaleIconSpan = this.firstElementChild;
@@ -730,12 +706,12 @@ femaleIconBtn.addEventListener('click', function () {
                     shape: 'cross',
                     radius: { 0: 60 },
                     fill: 'transparent',
-                    stroke: '#14D514',
+                    stroke: 'red',
                     strokeWidth: { 20: 0 },
                     opacity: 0.6,
                     duration: 700,
                     delay:300,
-                    easing: mojs.easing.sin.out
+                    easing: mojs.easing.sin.inout
                 }),
 
                 new mojs.Shape({
@@ -768,7 +744,7 @@ let moonIconOption: any;
 let moonIconSpan: any;
 
 moonIconBtn.addEventListener('click', function () {
-    this.style.color = 'Skyblue';
+    this.style.color = '#58FAF4';
     if (typeof moonIcon == "undefined") {
         moonIcon = new AnimateIcon();
         moonIconSpan = this.firstElementChild;
@@ -781,10 +757,11 @@ moonIconBtn.addEventListener('click', function () {
                     scale: { 0 : 1.5 },
                     angle: { 0 : 180 },
                     fill:  'transparent',
-                    stroke: '#14D514',
+                    stroke: '#FE2E64',
                     strokeWidth: { 20: 0 },
                     opacity: 0.6,
-                    easing: mojs.easing.sin.out
+                    easing: mojs.easing.sin.out,
+                    isShowEnd: false
                 }),
 
                 new mojs.Shape({
@@ -792,21 +769,22 @@ moonIconBtn.addEventListener('click', function () {
                     shape: 'cross',
                     radius: { 0: 50 },
                     fill: 'transparent',
-                    stroke: '#14D514',
+                    stroke: '#FE2E64',
                     strokeWidth: { 10: 0 },
                     opacity: 1.0,
+                    isShowEnd: false
                 }),
                 // icon scale animation
                 new mojs.Tween({
                     duration: 500,
                     onUpdate: function (progress) {
-                        moonIconSpan.classList.add('jello');
+                        moonIconSpan.classList.add('zoomOutLeft');
                     }
                 })
             ]
         };
     } else {
-        moonIconSpan.classList.remove('jello');
+        moonIconSpan.classList.remove('zoomOutLeft');
     }
     moonIcon.animateElement(this, moonIconOption, this.style.color, false);
 });
@@ -817,7 +795,7 @@ let dataBaseIconOption: any;
 let dataBaseIconSpan: any;
 
 dataBaseIconBtn.addEventListener('click', function () {
-    this.style.color = 'yellow';
+    this.style.color = '#610B4B';
     if (typeof dataBaseIcon == "undefined") {
         dataBaseIcon = new AnimateIcon();
         dataBaseIconSpan = this.firstElementChild;
@@ -832,7 +810,8 @@ dataBaseIconBtn.addEventListener('click', function () {
                     stroke: '#14D514',
                     strokeWidth: { 20: 0 },
                     opacity: 0.6,
-                    easing: mojs.easing.sin.out
+                    easing: mojs.easing.sin.out,
+                    isShowEnd: false
                 }),
 
                 new mojs.Shape({
@@ -843,6 +822,7 @@ dataBaseIconBtn.addEventListener('click', function () {
                     stroke: '#14D514',
                     strokeWidth: { 10: 0 },
                     opacity: 1.0,
+                    isShowEnd: false
                 }),
                 new mojs.Burst({ 
                     parent: this,
@@ -851,6 +831,7 @@ dataBaseIconBtn.addEventListener('click', function () {
                     children: {
                     shape: 'rect',
                     fill: 'red',
+                    isShowEnd: false
                     }
                   }),
                 // icon scale animation
@@ -874,7 +855,7 @@ let fileZipIconOption: any;
 let fileZipIconSpan: any;
 
 fileZipIconBtn.addEventListener('click', function () {
-    this.style.color = 'green';
+    this.style.color = '#8A4B08';
     if (typeof fileZipIcon == "undefined") {
         fileZipIcon = new AnimateIcon();
         fileZipIconSpan = this.firstElementChild;
@@ -882,36 +863,43 @@ fileZipIconBtn.addEventListener('click', function () {
             tweens: [    
                 new mojs.Shape({
                     parent: this,
-                    shape: 'polygon',
+                    shape: 'rect',
                     scale: { 0 : 1.5 },
                     angle: { 0 : 180 },
                     fill:  'transparent',
                     stroke: '#14D514',
                     strokeWidth: { 20: 0 },
                     opacity: 0.6,
-                    easing: mojs.easing.sin.out
+                    easing: mojs.easing.sin.out,
+                    isShowEnd: false
                 }),
 
-                new mojs.Burst({ 
-                    parent: this,
-                    radius: { 0: 100 },
-                    count: 10,
-                    children: {
-                    shape: 'cross',
-                    fill: 'Red',
-                    }
-                  }),
+                // ring animation
+                new mojs.Shape({
+                    parent: this,                
+                    radius: { 40: 0 },
+                    radiusY: { 20: 0 },
+                    fill: '#1D0A0A',
+                    stroke: '#1D0A0A',
+                    strokeWidth: 1,
+                    opacity: 0.3,
+                    top: '90%',
+                    duration: 400,
+                    delay: 100,
+                    easing: 'bounce.out',
+                    isShowEnd: false
+                }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        fileZipIconSpan.classList.add('jello');
+                        fileZipIconSpan.classList.add('heartBeat');
                     }
                 })
             ]
         };
     } else {
-        fileZipIconSpan.classList.remove('jello');
+        fileZipIconSpan.classList.remove('heartBeat');
     }
     fileZipIcon.animateElement(this, fileZipIconOption, this.style.color, false);
 });
@@ -949,15 +937,15 @@ gitIconBtn.addEventListener('click', function () {
                   }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        gitIconSpan.classList.add('jello');
+                        gitIconSpan.classList.add('fadeInRightBig');
                     }
                 })
             ]
         };
     } else {
-        gitIconSpan.classList.remove('jello');
+        gitIconSpan.classList.remove('fadeInRightBig');
     }
     gitIcon.animateElement(this, gitIconOption, this.style.color, false);
 });
@@ -978,9 +966,11 @@ headerIconBtn.addEventListener('click', function () {
                     parent: this,
                     radius: { 0: 100 },
                     count: 5,
+                    isShowEnd:false,
                     children: {
                     shape: 'rect',
                     fill: 'red',
+                    isShowEnd: false,
                     }
                   }),
                   new mojs.Shape({
@@ -992,28 +982,31 @@ headerIconBtn.addEventListener('click', function () {
                     stroke: '#14D514',
                     strokeWidth: { 20: 0 },
                     opacity: 0.4,
-                    easing: mojs.easing.sin.out
+                    easing: mojs.easing.sin.out,
+                    isShowEnd:false,
                 }),
                   new mojs.Burst({ 
                     parent: this,
                     radius: { 0: 100 },
                     count: 8,
+                    isShowEnd:false,
                     children: {
                     shape: 'equal',
                     fill: 'darkblue',
+                    isShowEnd:false,
                     }
                   }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 800,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        headerIconSpan.classList.add('jello');
+                        headerIconSpan.classList.add('lightSpeedIn');
                     }
                 })
             ]
         };
     } else {
-        headerIconSpan.classList.remove('jello');
+        headerIconSpan.classList.remove('lightSpeedIn');
     }
     headerIcon.animateElement(this, headerIconOption, this.style.color, false);
 });
@@ -1024,7 +1017,7 @@ let plugIconOption: any;
 let plugIconSpan: any;
 
 plugIconBtn.addEventListener('click', function () {
-    this.style.color = 'Black';
+    this.style.color = '#00FFFF';
     if (typeof plugIcon == "undefined") {
         plugIcon = new AnimateIcon();
         plugIconSpan = this.firstElementChild;
@@ -1039,28 +1032,31 @@ plugIconBtn.addEventListener('click', function () {
 					opacity: 		0.4,
 					duration: 	1000,
 					delay: 			100,
-					easing: 		mojs.easing.bezier(0, 1, 0.5, 1)
+                    easing: 		mojs.easing.bezier(0, 1, 0.5, 1),
+                    isShowEnd: false,
 				}),               
                   new mojs.Burst({ 
                     parent: this,
                     radius: { 0: 100 },
                     count: 8,
+                    isShowEnd: false,
                     children: {
                     shape: 'zigzag',
                     fill: 'darkbrown',
+                    isShowEnd: false,
                     }
                   }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        plugIconSpan.classList.add('jello');
+                        plugIconSpan.classList.add('rotateInDownLeft');
                     }
                 })
             ]
         };
     } else {
-        plugIconSpan.classList.remove('jello');
+        plugIconSpan.classList.remove('rotateInDownLeft');
     }
     plugIcon.animateElement(this, plugIconOption, this.style.color, false);
 });
@@ -1081,9 +1077,11 @@ wifiIconBtn.addEventListener('click', function () {
                     parent: this,
                     radius: { 0: 100 },
                     count: 8,
+                    isShowEnd: false,
                     children: {
                     shape: 'polygon',
                     fill: 'red',
+                    isShowEnd: false,
                     }
                   }),
                 new mojs.Shape({
@@ -1095,28 +1093,31 @@ wifiIconBtn.addEventListener('click', function () {
 					opacity: 		0.4,
 					duration: 	1000,
 					delay: 			100,
-					easing: 		mojs.easing.bezier(0, 1, 0.5, 1)
+                    easing: 		mojs.easing.bezier(0, 1, 0.5, 1),
+                    isShowEnd: false,
 				}),               
                   new mojs.Burst({ 
                     parent: this,
                     radius: { 0: 100 },
                     count: 8,
+                    isShowEnd: false,
                     children: {
                     shape: 'zigzag',
                     fill: 'green',
+                    isShowEnd: false,
                     }
                   }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        wifiIconSpan.classList.add('jello');
+                        wifiIconSpan.classList.add('bounceInUp');
                     }
                 })
             ]
         };
     } else {
-        wifiIconSpan.classList.remove('jello');
+        wifiIconSpan.classList.remove('bounceInUp');
     }
     wifiIcon.animateElement(this, wifiIconOption, this.style.color, false);
 });
@@ -1125,7 +1126,6 @@ let hphoneBtn = document.getElementById('head');
 let hphoneIcon: AnimateIcon;
 let hphoneOption: any;
 let hphoneSpan: any;
-
 
 hphoneBtn.addEventListener('click', function () {
     this.style.color = '#FF2318';
@@ -1163,16 +1163,16 @@ hphoneBtn.addEventListener('click', function () {
                     }
                 }),
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        hphoneSpan.classList.add('jello');
+                        hphoneSpan.classList.add('fadeOutDown');
                     }
                 })
             ]
         };
     }
     else {
-        hphoneSpan.classList.remove('jello');
+        hphoneSpan.classList.remove('fadeOutDown');
     }
     hphoneIcon.animateElement(this, hphoneOption, this.style.color, false);
 });
@@ -1206,68 +1206,71 @@ BookBtn.addEventListener('click', function () {
                     easing:       'sin.in'
 				}),
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        BookSpan.classList.add('jello');
+                        BookSpan.classList.add('bounceInLeft');
                     }
                 })
             ]
         };
     }
     else {
-        BookSpan.classList.remove('jello');
+        BookSpan.classList.remove('bounceInLeft');
     }
     BookIcon.animateElement(this, BookOption, 'green', false);
 });
+
 let CameraBtn = document.getElementById('camera');
 let CameraIcon: AnimateIcon;
 let CameraOption: any;
 let CameraSpan: any;
 CameraBtn.addEventListener('click', function () {
-    this.style.color = '#FF2318';
-    if (typeof CameraIcon === "undefined") {
-        CameraIcon = new AnimateIcon();
-        CameraSpan = this.firstElementChild;
-        CameraOption = {
-                tweens: [
-                    // burst animation
-                    new mojs.Burst({
-                        parent: this,
-                        radius: { 0: 60 },
-                        count: 6,
-                        children: {
-                            shape: 'cross',
-                            stroke: '#C0C1C3',
-                            opacity: 0.6,
-                            radius: 15,
-                            duration: 1700,
-                            easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
-                        }
-                    }),
-                new mojs.Shape({
-                    parent: this,
-                    shape:        'cross',   
-                    stroke:       '#A8CABA',
-                    scale:        { 0 : 1.5 },
-                    angle:        { 0 : 180 },
-                    fill:         { '#721e5f' : '#a5efce' },
-                    radius:       25,
-                    duration:     1200,
-                    easing:       'sin.out'
-				}),
-                new mojs.Tween({
-                    duration: 1200,
-                    onUpdate: function (progress) {
-                        CameraSpan.classList.add('jello');
-                    }
-                })
-            ]
-        };
-    }
-    else {
-        CameraSpan.classList.remove('jello');
-    }
-    CameraIcon.animateElement(this, CameraOption, 'orange', false);
+ this.style.color = '#FF2318';
+ if (typeof CameraIcon === "undefined") {
+ CameraIcon = new AnimateIcon();
+ CameraSpan = this.firstElementChild;
+ CameraOption = {
+ tweens: [
+ // burst animation
+ new mojs.Burst({
+ parent: this,
+ radius: { 0: 60 },
+ count: 6,
+ children: {
+ shape: 'cross',
+ stroke: '#C0C1C3', 
+ opacity: 0.6,
+ radius: 15,
+ duration: 1700,
+ isShowEnd: false,
+ easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
+ }
+ }),
+ new mojs.Shape({
+ parent: this,
+ shape: 'cross', 
+ stroke: '#A8CABA',
+ scale: { 0 : 1.5 },
+ angle: { 0 : 180 },
+ 
+ radius: 25,
+ duration: 1200,
+ isShowEnd: false,
+ easing: 'sin.out'
+                }),
+ new mojs.Tween({
+ duration: 1200,
+ onUpdate: function (progress) {
+ CameraSpan.classList.add('tada');
+ }
+ })
+ ]
+ };
+ }
+ else {
+ CameraSpan.classList.remove('tada');
+ }
+ CameraIcon.animateElement(this, CameraOption, 'orange', false);
 });
 
 let videoBtn = document.getElementById('video');
@@ -1322,30 +1325,30 @@ videoBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1000,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        videoSpan.classList.add('jello');
+                        videoSpan.classList.add('flash');
                     }
                 })
             ]
         };
     } else {
-        videoSpan.classList.remove('jello');
+        videoSpan.classList.remove('flash');
     }
     iconVideo.animateElement(this, videoIconOption, this.style.color, false);
 });
 
-let firefoxBtn = document.getElementById('show');
-let iconFirefox: AnimateIcon;
-let firefoxIconOption: any;
-let firefoxSpan: any;
+let warningBtn = document.getElementById('show');
+let iconWarning: AnimateIcon;
+let warningIconOption: any;
+let warningSpan: any;
 
-firefoxBtn.addEventListener('click', function () {
+warningBtn.addEventListener('click', function () {
     this.style.color = '#e35bf5';
-    if (typeof iconFirefox === "undefined") {
-        iconFirefox = new AnimateIcon();
-        firefoxSpan = this.firstElementChild;
-        firefoxIconOption = {
+    if (typeof iconWarning === "undefined") {
+        iconWarning = new AnimateIcon();
+        warningSpan = this.firstElementChild;
+        warningIconOption = {
             tweens: [
                 new mojs.Shape({
                     parent: this,
@@ -1358,28 +1361,33 @@ firefoxBtn.addEventListener('click', function () {
                     radius:       25,
                     duration:     1500,
                     delay:        300,
-                    repeat:       1,
                     isShowEnd: false
                 }),
+                new mojs.Tween({
+                    duration: 500,
+                    onUpdate: function (progress) {
+                        warningSpan.classList.add('bounceOutUp');
+                    }
+                })
             ]
         };
     } else {
-        firefoxSpan.classList.remove('jello');
+        warningSpan.classList.remove('bounceOutUp');
     }
-    iconFirefox.animateElement(this, firefoxIconOption, this.style.color, false);
+    iconWarning.animateElement(this, warningIconOption, this.style.color, false);
 });
 
-let warningBtn = document.getElementById('firefox');
-let iconWarning: AnimateIcon;
-let warningIconOption: any;
-let warningSpan: any;
+let firefoxBtn = document.getElementById('firefox');
+let iconFirefox: AnimateIcon;
+let firefoxIconOption: any;
+let firefoxSpan: any;
 
-warningBtn.addEventListener('click', function () {
-    this.style.color = '#e35bf5';
-    if (typeof iconWarning === "undefined") {
-        iconWarning = new AnimateIcon();
-        warningSpan = this.firstElementChild;
-        warningIconOption = {
+firefoxBtn.addEventListener('click', function () {
+    this.style.color = 'orange';
+    if (typeof iconFirefox === "undefined") {
+        iconFirefox= new AnimateIcon();
+        firefoxSpan = this.firstElementChild;
+        firefoxIconOption = {
             tweens: [
                 new mojs.Burst({
                     parent:this,
@@ -1411,17 +1419,17 @@ warningBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1000,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        warningSpan.classList.add('jello');
+                        firefoxSpan.classList.add('wobble');
                     }
                 })
             ]
         };
     } else {
-        warningSpan.classList.remove('jello');
+        firefoxSpan.classList.remove('wobble');
     }
-    iconWarning.animateElement(this, warningIconOption, this.style.color, false);
+    iconFirefox.animateElement(this, firefoxIconOption, this.style.color, false);
 });
 
 let photoBtn = document.getElementById('photo');
@@ -1450,16 +1458,16 @@ photoBtn.addEventListener('click', function () {
                         }
                       }),
                 new mojs.Tween({
-                   duration: 1500,
+                   duration: 500,
                     onUpdate: function (progress) {
-                        photoSpan.classList.add('jello');
+                        photoSpan.classList.add('slideInUp');
                     }
                 })
             ]
         };
     }
     else {
-        photoSpan.classList.remove('jello');
+        photoSpan.classList.remove('slideInUp');
     }
     photoIcon.animateElement(this, photoOption, 'orange', false);
 });
@@ -1492,31 +1500,31 @@ settBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        settSpan.classList.add('jello');
+                        settSpan.classList.add('bounceInUp');
                     }
                 })
             ]
         };
     } else {
-        settSpan.classList.remove('jello');
+        settSpan.classList.remove('bounceInUp');
     }
     settIcon.animateElement(this, settOption, this.style.color, false);
 });
 
 
-let rtBtn = document.getElementById('volumeUp');
-let rtIcon: AnimateIcon;
-let rtOption: any;
-let rtSpan: any;
+let vlBtn = document.getElementById('volumeUp');
+let vlIcon: AnimateIcon;
+let vlOption: any;
+let vlSpan: any;
 
-rtBtn.addEventListener('click', function () {
+vlBtn.addEventListener('click', function () {
     this.style.color = 'green';
-    if (typeof rtIcon === "undefined") {
-        rtIcon = new AnimateIcon();
-        rtSpan = this.firstElementChild;
-        rtOption = {
+    if (typeof vlIcon === "undefined") {
+        vlIcon = new AnimateIcon();
+        vlSpan = this.firstElementChild;
+        vlOption = {
             tweens: [
                 // burst animation
                 new mojs.Burst({
@@ -1559,17 +1567,17 @@ rtBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        rtSpan.classList.add('jello');
+                        vlSpan.classList.add('tada');
                     }
                 })
             ]
         };
     } else {
-        rtSpan.classList.remove('jello');
+        vlSpan.classList.remove('tada');
     }
-    rtIcon.animateElement(this, rtOption, this.style.color, false);
+    vlIcon.animateElement(this, vlOption, this.style.color, false);
 });
 let cmtBtn = document.getElementById('comment');
 let cmtIcon: AnimateIcon;
@@ -1612,15 +1620,15 @@ cmtBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        cmtSpan.classList.add('jello');
+                        cmtSpan.classList.add('flipOutY');
                     }
                 })
             ]
         };
     } else {
-        cmtSpan.classList.remove('jello');
+        cmtSpan.classList.remove('flipOutY');
     }
     cmtIcon.animateElement(this, cmtOption, this.style.color, false);
 });
@@ -1639,7 +1647,7 @@ rlyBtn.addEventListener('click', function () {
                 // burst animation
                 new mojs.Burst({
                     parent: this,
-                    radius: { 0: 60 },
+                    radius: { 0: 100 },
                     count: 6,
                     children: {
                         shape: 'rect',
@@ -1653,15 +1661,15 @@ rlyBtn.addEventListener('click', function () {
                 }),
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        rlySpan.classList.add('jello');
+                        rlySpan.classList.add('zoomOutLeft');
                     }
                 })
             ]
         };
     } else {
-        rlySpan.classList.remove('jello');
+        rlySpan.classList.remove('zoomOutLeft');
     }
     rlyIcon.animateElement(this, rlyOption, this.style.color, false);
 });
@@ -1696,15 +1704,15 @@ phoneBtn.addEventListener('click', function () {
                
                 // icon scale animation
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        phoneSpan.classList.add('swing');
+                        phoneSpan.classList.add('shake');
                     }
                 })
             ]
         };
     } else {
-        phoneSpan.classList.remove('swing');
+        phoneSpan.classList.remove('shake');
     }
     phoneIcon.animateElement(this, phoneOptions, this.style.color, false);
 });
@@ -1740,15 +1748,15 @@ hearBtn.addEventListener('click', function () {
                     }
                 }),
                 new mojs.Tween({
-                    duration: 1200,
+                    duration: 500,
                     onUpdate: function (progress) {
-                        hearSpan.classList.add('pulse');
+                        hearSpan.classList.add('bounceOut');
                     }
                 })
             ]
         };
     } else {
-        hearSpan.classList.remove('pulse');
+        hearSpan.classList.remove('bounceOut');
     }
     hearIcon.animateElement(this, hearOptions, this.style.color, false);
 });
@@ -1784,14 +1792,14 @@ calculatorIconBtn.addEventListener('click', function () {
  new mojs.Tween({
  duration: 1200,
  onUpdate: function (progress) {
-    calculatorIconSpan.classList.add('shake');
+    calculatorIconSpan.classList.add('bounceIn');
  }
  })
  
  ]
  };
  } else {
-    calculatorIconSpan.classList.remove('shake');
+    calculatorIconSpan.classList.remove('bounceIn');
  }
  calculatorIcon.animateElement(this, calculatorIconOptions, this.style.color, false);
 });

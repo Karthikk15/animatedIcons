@@ -108,6 +108,8 @@
 }
 
 .flash {
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
   -webkit-animation-name: flash;
   animation-name: flash;
 }
@@ -496,6 +498,12 @@
 }
 
 .tada {
+  -webkit-transform-origin: right;
+  transform-origin: right;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
   -webkit-animation-name: tada;
   animation-name: tada;
 }
@@ -577,6 +585,8 @@
 }
 
 .wobble {
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
   -webkit-animation-name: wobble;
   animation-name: wobble;
 }
@@ -998,6 +1008,8 @@
 }
 
 .bounceInLeft {
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
   -webkit-animation-name: bounceInLeft;
   animation-name: bounceInLeft;
 }
@@ -1160,6 +1172,8 @@
 }
 
 .bounceInUp {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
   -webkit-animation-name: bounceInUp;
   animation-name: bounceInUp;
 }
@@ -1363,6 +1377,8 @@
 }
 
 .bounceOutUp {
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
   -webkit-animation-name: bounceOutUp;
   animation-name: bounceOutUp;
 }
@@ -1588,6 +1604,7 @@
 .fadeInRightBig {
   -webkit-animation-name: fadeInRightBig;
   animation-name: fadeInRightBig;
+  animation-duration: 1.3s;
 }
 
 @-webkit-keyframes fadeInUp {
@@ -1710,6 +1727,8 @@
 }
 
 .fadeOutDown {
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
   -webkit-animation-name: fadeOutDown;
   animation-name: fadeOutDown;
 }
@@ -2305,6 +2324,7 @@
 .lightSpeedIn {
   -webkit-animation-name: lightSpeedIn;
   animation-name: lightSpeedIn;
+  animation-duration: 1.3s;
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
 }
@@ -2420,6 +2440,7 @@
 .rotateInDownLeft {
   -webkit-animation-name: rotateInDownLeft;
   animation-name: rotateInDownLeft;
+  animation-duration: 1.3s;
 }
 
 @-webkit-keyframes rotateInDownRight {
@@ -3240,6 +3261,8 @@
 }
 
 .zoomOutLeft {
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
   -webkit-animation-name: zoomOutLeft;
   animation-name: zoomOutLeft;
 }
@@ -3446,6 +3469,8 @@
 }
 
 .slideInUp {
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
 }

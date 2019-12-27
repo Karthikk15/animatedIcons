@@ -19,11 +19,19 @@ h1{
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	text-transform: uppercase;	
 	color: white;	
-	margin-top: 0px;	
+	margin-top: 0px;
+	padding-top: 70px;
+		
 }
 h1::first-letter {
 	font-size: 50px;
 	color:black;
+}
+
+span{
+	color: black;
+	font-size: 15px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 img{
